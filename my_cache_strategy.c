@@ -1,5 +1,5 @@
-#include "cache_strategy.h"
-#include "memory_pool.h"
+#include "my_cache_strategy.h"
+#include "my_memory_pool.h"
 
 
 //初始化缓存策略参数

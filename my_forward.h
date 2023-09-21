@@ -1,5 +1,5 @@
-#include "memory_pool.h"
-#include "cache_strategy.h"
+#include "my_memory_pool.h"
+#include "my_cache_strategy.h"
 #ifndef _FORWARD_H_
 #define _FORWARD_H_
 

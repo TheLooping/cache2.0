@@ -1,7 +1,7 @@
-#include "memory_pool.h"
-#include "forward.h"
-#include "cache_strategy.h"
-#include "cache.h"
+#include "my_memory_pool.h"
+#include "my_forward.h"
+#include "my_cache_strategy.h"
+#include "my_cache.h"
 #define REQUEST_SIZE 0 * GB + 0 * MB + 1 * KB + 0 * 1
 
 
@@ -33,7 +33,7 @@ int main()
 
     // 输出内存池信息
     // 输出到文件
-    FILE *fp = fopen("output.txt", "w");
+    FILE *fp = fopen("output2.txt", "w");
     if(fp == NULL)
     {
         printf("open file failed!\n");

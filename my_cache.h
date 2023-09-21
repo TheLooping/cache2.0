@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "memory_pool.h"
-#include "forward.h"
-#include "cache_strategy.h"
+#include "my_memory_pool.h"
+#include "my_forward.h"
+#include "my_cache_strategy.h"
 #ifndef _CACHE_H_
 #define _CACHE_H_
 

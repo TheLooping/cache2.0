@@ -1,3 +1,9 @@
 {
-    "commentTranslate.hover.enabled": true
+    "commentTranslate.hover.enabled": true,
+    "files.associations": {
+        "my_cache.h": "c",
+        "my_cache_strategy.h": "c",
+        "my_forward.h": "c",
+        "my_memory_pool.h": "c"
+    }
 }
