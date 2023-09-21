@@ -8,6 +8,7 @@
 #define REQUEST_SIZE 0 * GB + 0 * MB + 1 * KB + 0 * 1
 
 void cache_module(memory_pool_t *mp, char *payload_start, uint32_t len);
-// 缓存模块
+void cache_data(memory_pool_t *mp, forward_data_t *myForwardData);
+
 
 #endif

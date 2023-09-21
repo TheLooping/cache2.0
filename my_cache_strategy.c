@@ -40,11 +40,6 @@ bool probCacheStrategy(struct cacheStrategyPara* cacheStrategyPara) {
     float timesIn = (float)cacheStrategyPara->remainCacheCapacity /((float)cacheStrategyPara->thisNodeCacheCapacity * TTW) ;
     float prob = cacheWeight * timesIn;
 
-    printf("timesIn: %f\n", timesIn);
-    printf("cacheWeight: %f\n", cacheWeight);
-    printf("prob: %f\n", prob);
-
-
     if (prob > CRITICAL_VALUE) {
         return true;
     }

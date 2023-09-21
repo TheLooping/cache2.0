@@ -17,7 +17,7 @@ typedef struct request_t
 typedef struct forward_data_t
 {
     int8_t type;//类型(0:请求 1:响应)
-    void *start;
+    char *start;
     int len;
     char key[KEY_LEN];
     //跳数相关

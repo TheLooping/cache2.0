@@ -8,7 +8,7 @@ void cache_module(memory_pool_t *mp, char *payload_start, uint32_t len){
         // 转发请求
         request_t *myRequest = (request_t *)(payload_start + 3);
         key_value_pair_t* kv;
-        if((kv = forwardRequest(myRequest, mp)) == NULL){
+        if((kv = forwardRequest(mp, myRequest)) == NULL){
             return;
         }
         // 缓存命中

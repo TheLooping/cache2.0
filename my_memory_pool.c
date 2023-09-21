@@ -267,6 +267,9 @@ void chunk_alloc_for_key_value_pair(memory_pool_t *mp, key_value_pair_t *key_val
 int32_t find_key_value_pair_by_key(memory_pool_t *mp, char *key)
 {
     key_value_pair_t *key_value_pair = (key_value_pair_t *)(mp->key_value_pair_table_alloc_list);
+    if(key_value_pair == NULL){
+        return -1;
+    }
     while (key_value_pair->next != (key_value_pair_t *)(mp->key_value_pair_table_alloc_list))
     {
         if (memcmp(key_value_pair->key, key, KEY_LEN) == 0)
