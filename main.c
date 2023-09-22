@@ -127,6 +127,7 @@ void make_request_data(char *buffer)
 
 void make_response_data(char *buffer)
 {
+    memset(buffer, 0, sizeof(char) * 1024);
     forward_data_t *response;
     response = (forward_data_t *)buffer;
     response->tsb = 0;
