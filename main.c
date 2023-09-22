@@ -1,8 +1,10 @@
 #include "my_memory_pool.h"
+#include "my_cache_strategy.h"
+#include "my_forward.h"
+#include "my_cache.h"
 #include <stdio.h>
 #define REQUEST_SIZE 0 * GB + 0 * MB + 1 * KB + 0 * 1
 
-void make_request_data();
 
 
 int main()
@@ -113,9 +115,9 @@ int main()
 }
 
 // 造包程序
-void make_request_data()
+void make_request_data(char *buffer)
 {
-    memset(buffer, 0, sizeof(buffer));
+    memset(buffer, 0, sizeof(char) * 1024);
     request_t *request;
     request = (request_t *)buffer;    
     strcpy(request->key, "AAAA");
@@ -123,13 +125,14 @@ void make_request_data()
     request->capacity = 0;
 }
 
-void make_response_data()
+void make_response_data(char *buffer)
 {
-    response_t *response;
-    response = (response_t *)buffer;
-    strcpy(response->key, "AAAA");
+    forward_data_t *response;
+    response = (forward_data_t *)buffer;
     response->tsb = 0;
-    response->capacity = 0;
-    response->len = 0;
-    response->start = NULL;
+    response->tsi = 5;// 假设路径总跳数为5
+    response->len = 100;
+    response->start = response + sizeof(forward_data_t);
+    response->remainCapacity = 0;
+    strcpy(response->start, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 }
