@@ -2,11 +2,12 @@
 #include <stdio.h>
 #define REQUEST_SIZE 0 * GB + 0 * MB + 1 * KB + 0 * 1
 
-
+void make_request_data();
 
 
 int main()
 {
+    char *buffer = malloc(sizeof(char) * 1024);
     memory_pool_t *mp = memory_pool_t_init(REQUEST_SIZE);
     
     uint32_t len;
@@ -109,4 +110,26 @@ int main()
     }
 
     return 0;
+}
+
+// 造包程序
+void make_request_data()
+{
+    memset(buffer, 0, sizeof(buffer));
+    request_t *request;
+    request = (request_t *)buffer;    
+    strcpy(request->key, "AAAA");
+    request->tsb = 0;
+    request->capacity = 0;
+}
+
+void make_response_data()
+{
+    response_t *response;
+    response = (response_t *)buffer;
+    strcpy(response->key, "AAAA");
+    response->tsb = 0;
+    response->capacity = 0;
+    response->len = 0;
+    response->start = NULL;
 }
